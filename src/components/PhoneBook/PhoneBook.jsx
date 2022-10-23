@@ -1,4 +1,4 @@
-export const DisplayEntries = ({entries}) => {
+export const DisplayEntries = ({Contacts }) => {
     
     return (<table>
         <thead>
@@ -9,10 +9,10 @@ export const DisplayEntries = ({entries}) => {
 
         </thead>
 <tbody>
-    {entries.map(entry =>(
+    {Contacts.map(contact =>(
         <tr>
-            <td>{entry.name}</td>
-            <td>{entry.number}</td>
+            <td>{contact.name}</td>
+            <td>{contact.number}</td>
         </tr>
     )  )}
 </tbody>
