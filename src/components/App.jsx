@@ -2,7 +2,14 @@ import React from 'react';
 import { ContactsList } from './ContactsList/ContactsList';
 import { Form } from "./Form/Form";
 
+const INITIAL_STATE = {
+contactsList: []
+
+}
+
 export class App extends React.Component {
+  state = { ...INITIAL_STATE };
+
   handleSubmit = evt => {
     evt.preventDefault();
    
@@ -21,7 +28,9 @@ export class App extends React.Component {
     this.setState({ [name]: value });
   };
   
- 
+
+
+
   render() {
     
   return (
@@ -31,12 +40,7 @@ export class App extends React.Component {
         <Form />
   
         <h2>Contacts:</h2>
-       <ContactsList 
-       name ={this.name}
-       number= {this.number}
-
-
-       />
+        
        
       </div>
     );

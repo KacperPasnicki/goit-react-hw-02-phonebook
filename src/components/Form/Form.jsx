@@ -4,9 +4,9 @@ import { useState } from 'react';
 import { ContactsList } from 'components/ContactsList/ContactsList';
 import PropTypes from 'prop-types';
 const INITIAL_STATE = {
-  contacts: [],
-  name: '',
-  number: ''
+  contacts: [''],
+  name: 'julek',
+  number: " 777888000"
 }
 
 export class Form extends React.Component {
@@ -15,6 +15,16 @@ export class Form extends React.Component {
         ...INITIAL_STATE
       };
  
+
+      // state={
+      //   name:"",
+      //   number:"",
+      //   phoneBook:[
+      //       {name: "julek", number: "+7898378532"},
+      //       {name: "Xyz", number: "+9399452757"}
+      //       ],
+        
+      //  }
       elementId = nanoid(8);
 
       handleSubmit = evt => {
@@ -26,7 +36,9 @@ export class Form extends React.Component {
         
         console.log(name, number);
     
-      //   this.props.onSubmit({ ...this.state });
+        this.setState(({ contacts }) => ({
+          contacts: [...contacts,],
+        }));
     
         form.reset();
       };
