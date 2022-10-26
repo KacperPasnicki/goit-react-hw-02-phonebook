@@ -1,12 +1,12 @@
 
 
 
-export const ContactsList = ({ contactsList }) => {
+export const ContactsList = ({ contacts }) => {
    
     return (
     
     <ul>
-        {contactsList.map(contact =>(
+        {contacts.map(contact =>(
         <li  key={contact.id}>
            <span>  {contact.name}
              {contact.number} </span>

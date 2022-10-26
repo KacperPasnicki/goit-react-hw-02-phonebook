@@ -5,55 +5,45 @@ import { ContactsList } from 'components/ContactsList/ContactsList';
 import PropTypes from 'prop-types';
 const INITIAL_STATE = {
   contacts: [''],
-  name: 'julek',
-  number: " 777888000"
+  name: '',
+  number: ''
 }
 
 export class Form extends React.Component {
-  
+  static propTypes = { handleSubmit: PropTypes.func.isRequired };
     state = {
         ...INITIAL_STATE
       };
  
-
-      // state={
-      //   name:"",
-      //   number:"",
-      //   phoneBook:[
-      //       {name: "julek", number: "+7898378532"},
-      //       {name: "Xyz", number: "+9399452757"}
-      //       ],
-        
-      //  }
       elementId = nanoid(8);
 
-      handleSubmit = evt => {
-        evt.preventDefault();
+      // handleSubmit = evt => {
+      //   evt.preventDefault();
        
-        const form = evt.currentTarget;
-        const name = form.elements.name.value
-        const number = form.elements.number.value;
+      //   const form = evt.currentTarget;
+      //   const name = form.elements.name.value
+      //   const number = form.elements.number.value;
+      //   this.props.onSubmit({ ...this.state });
+      //   console.log(name, number);
         
-        console.log(name, number);
+      //   this.setState(({ contacts }) => ({
+      //     contacts: [...contacts,],
+      //   }));
     
-        this.setState(({ contacts }) => ({
-          contacts: [...contacts,],
-        }));
-    
-        form.reset();
-      };
+      //   form.reset();
+      // };
 
     
   
     render() {
      
       return (
-        <form onSubmit={this.handleSubmit}
+        <form onSubmit={this.props.handleSubmit}
         htmlFor={this.elementId}>
           <label>Name:
           <input 
           id={this.elementId}
-          value = {this.name}
+          value={this.name}
           type="text"
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -66,7 +56,7 @@ export class Form extends React.Component {
           <label>Number: 
           <input 
           id={this.elementId}
-          value = {this.number}
+          value={this.number}
           onChange={this.handleChange}
           type="tel"
           name="number"
