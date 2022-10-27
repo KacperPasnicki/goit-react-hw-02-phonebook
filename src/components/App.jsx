@@ -14,6 +14,8 @@ import { Filter } from './Filter';
     filter: '',
   };
 
+
+
 export class App extends React.Component {
   state = { ...INITIAL_STATE };
 
@@ -44,7 +46,7 @@ export class App extends React.Component {
     this.setState({ [name]: value });
   };
   
-  fooFilter = () => {
+  findContact = () => {
     const newArray = this.state.contacts.filter(contact => {
       const valueToLow = this.state.filter.toLowerCase();
       return contact.name.toLowerCase().includes(valueToLow);
@@ -52,7 +54,7 @@ export class App extends React.Component {
     return newArray;
   };
 
-  fooDelete = contactID => {
+  removeContact = contactID => {
     const index = this.state.contacts.findIndex(
       contact => contact.id === contactID
     );
@@ -90,7 +92,7 @@ export class App extends React.Component {
         <h2>Contacts:</h2>
       <Filter value={this.state.filter} handleChange={this.handleChange}/>
       <ContactsList
-      onDelete={this.fooDelete} filterArray={this.fooFilter}
+      onDelete={this.removeContact} actualContacts={this.findContact}
       />
       </div>
     );
