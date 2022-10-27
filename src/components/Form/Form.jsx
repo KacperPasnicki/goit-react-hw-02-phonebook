@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { ContactsList } from 'components/ContactsList/ContactsList';
 import PropTypes from 'prop-types';
 const INITIAL_STATE = {
-  contacts: [''],
+  id: [''],
   name: '',
   number: ''
 }
@@ -19,18 +19,12 @@ export class Form extends React.Component {
 
       // handleSubmit = evt => {
       //   evt.preventDefault();
-       
       //   const form = evt.currentTarget;
-      //   const name = form.elements.name.value
+      //   const name = form.elements.name.value;
       //   const number = form.elements.number.value;
-      //   this.props.onSubmit({ ...this.state });
-      //   console.log(name, number);
+      //   const newContact = { id: nanoid(6), name: name, number: number };
+      //   const nameArray = this.state.contacts.map(({ name }) => name);
         
-      //   this.setState(({ contacts }) => ({
-      //     contacts: [...contacts,],
-      //   }));
-    
-      //   form.reset();
       // };
 
     
