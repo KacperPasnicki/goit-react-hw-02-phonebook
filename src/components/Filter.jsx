@@ -11,10 +11,10 @@ export class Filter extends React.Component {
   
     render() {
       return (
-        <label>
+        <label className='label'>
           Find contacts by Name
           <input
-            
+            className='filterForm'
             type="text"
             name="filter"
             value={this.props.value}

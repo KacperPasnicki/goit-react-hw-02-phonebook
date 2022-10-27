@@ -1,8 +1,8 @@
 import React from 'react';
 import { nanoid } from 'nanoid'
-import { useState } from 'react';
-import { ContactsList } from 'components/ContactsList/ContactsList';
 import PropTypes from 'prop-types';
+
+
 const INITIAL_STATE = {
   id: [''],
   name: '',
@@ -17,24 +17,14 @@ export class Form extends React.Component {
  
       elementId = nanoid(8);
 
-      // handleSubmit = evt => {
-      //   evt.preventDefault();
-      //   const form = evt.currentTarget;
-      //   const name = form.elements.name.value;
-      //   const number = form.elements.number.value;
-      //   const newContact = { id: nanoid(6), name: name, number: number };
-      //   const nameArray = this.state.contacts.map(({ name }) => name);
-        
-      // };
-
     
   
     render() {
      
       return (
-        <form onSubmit={this.props.handleSubmit}
+        <form className='nameForm' onSubmit={this.props.handleSubmit}
         htmlFor={this.elementId}>
-          <label>Name:
+          <label className='label'><span className='formName'>Name: </span>
           <input 
           id={this.elementId}
           value={this.name}
@@ -47,7 +37,7 @@ export class Form extends React.Component {
             onChange={this.handleChange}
           />
           </label>
-          <label>Number: 
+          <label className='label'><span className='formName'>Number: </span>
           <input 
           id={this.elementId}
           value={this.number}
@@ -61,7 +51,7 @@ export class Form extends React.Component {
           
           />
           </label>
-          <button type="submit">Add Contact</button>
+          <button className='addButton' type="submit">Add Contact</button>
       
           
         </form>

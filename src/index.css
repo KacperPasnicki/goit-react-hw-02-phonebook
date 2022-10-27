@@ -13,3 +13,72 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+li,
+ul,
+h1, h2, h3, h3, h4, h5, h6
+{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#root{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+    max-width: 1200px;
+    background-color:#D3D3D3;
+    flex-direction: row;
+    
+    flex-wrap: wrap;
+}
+#root{
+  padding: 15%;
+    
+}
+.phonebook{
+  display: inline-flex;
+  flex-wrap: wrap;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: 5px 5px 10px orange;
+  padding: 25px;
+  background-color: #edf7f6;
+}
+
+
+.label{
+  padding: 5px;
+  margin: 10px;
+  display: inline-flex;
+}
+
+.formName,
+.filterForm,
+.contact{
+  margin: 10px;
+ 
+}
+li{
+  margin: 10px;
+}
+
+ul{
+  
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+.nameForm{
+  display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.addButton{
+  padding: 15px;
+  
+}

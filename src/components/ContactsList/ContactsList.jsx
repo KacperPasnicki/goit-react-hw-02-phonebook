@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types';
 
 
 export const ContactsList = ({onDelete, filterArray}) => {
@@ -8,10 +8,10 @@ export const ContactsList = ({onDelete, filterArray}) => {
     <ul>
         {filterArray().map(contact =>(
         <li  key={contact.id}>
-           <span>  {contact.name}
-             {contact.number} </span>
+           <span className='contact'>  {contact.name}:   </span>
+           <span className='contact'>    {contact.number} </span>
              
-             <button type="button"
+             <button type="button" className='btn'
              onClick={()=> onDelete(contact.id)}>
               Remove Contact
 
@@ -21,3 +21,7 @@ export const ContactsList = ({onDelete, filterArray}) => {
 
 </ul>)}
     
+    ContactsList.propTypes = {
+      onDelete: PropTypes.func.isRequired,
+      filterArray: PropTypes.func.isRequired
+        }

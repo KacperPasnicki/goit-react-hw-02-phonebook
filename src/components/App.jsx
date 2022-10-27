@@ -72,7 +72,17 @@ export class App extends React.Component {
   render() {
     
   return (
-      <div
+      <div className='phonebook'
+      style={{
+        height: '100%',
+        
+        color: '#010101',
+        padding: '50px 10px',
+        justifyContent: 'space-around'
+       
+
+        
+      }}
       >
         <h1>Phonebook</h1>
         <Form  handleSubmit={this.handleSubmit}/>
