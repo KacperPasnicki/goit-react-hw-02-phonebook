@@ -47,23 +47,28 @@ h1, h2, h3, h3, h4, h5, h6
   box-shadow: 5px 5px 10px orange;
   padding: 25px;
   background-color: #edf7f6;
+  
 }
 
 
 .label{
   padding: 5px;
   margin: 10px;
-  display: inline-flex;
+  display: flex;
+  align-items: center;
 }
 
 .formName,
 .filterForm,
 .contact{
   margin: 10px;
- 
+  text-align: center;
 }
 li{
-  margin: 10px;
+  display: flex;
+  text-align: center;
+    margin: 10px;
+    align-items: center;
 }
 
 ul{
@@ -79,6 +84,26 @@ ul{
     flex-direction: column;
 }
 .addButton{
+  font-size: 22px;
   padding: 15px;
+  border-radius: 25px;
+  border:none;
+  background-color: greenyellow;
+  transition: all 0.3s linear;
+}
+.btn{
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 25px;
+  border:none;
+  background-color: orangered;
+  transition: width 1s ease-in, height 1s ease-in;
+  transition: all 0.3s linear;
+}
+.btn:hover,
+.addButton:hover{
+  opacity: 0.8;
+  cursor: pointer;
+  scale: 1.1;
   
 }
